@@ -23,7 +23,6 @@ Start Office with headless mode.
 </code>
 Configuration
 -------------
-
 These are the default settings which can be overwritten in your enviroment configuration file.
 
 <code>
@@ -33,7 +32,6 @@ These are the default settings which can be overwritten in your enviroment confi
       :soffice_port=>8100           # Open office port no
   }
 </code>
-
 Example
 =======
 If destination file is known.destination file consist valid file format
