@@ -16,7 +16,8 @@ JDK 1.5.x or 1.6.x
 
 OpenOffice 2,3 or greater
 
-Start Office with headless mode 
+Start Office with headless mode.
+ 
 <code>
   soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard
 </code>
