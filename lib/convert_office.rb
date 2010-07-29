@@ -60,14 +60,14 @@ module ConvertOffice
 				if VALID_FORMAT[input_extension_name].nil?
 					puts "Not A Proper Format"
 					VALID_FORMAT.each do |k,v|
-						puts "#{k} = #{v.join(",")}"
+						puts "#{k} => #{v.join(",")}"
 					end
 				else
 					puts VALID_FORMAT[input_extension_name].join(",")
 				end
 			else
 				VALID_FORMAT.each do |k,v|
-						puts "#{k} = #{v.join(",")}"
+						puts "#{k} => #{v.join(",")}"
 				end
 			end
 		end  
