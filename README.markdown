@@ -23,6 +23,7 @@ Start Office with headless mode.
 </code>
 Configuration
 -------------
+
 These are the default settings which can be overwritten in your enviroment configuration file.
 
 <code>
