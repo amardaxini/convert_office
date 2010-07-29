@@ -24,14 +24,14 @@ Start Office with headless mode.
 Configuration
 -------------
 
-These are the default settings which can be overwritten in your enviroment configuration file:
+These are the default settings which can be overwritten in your enviroment configuration file.
 
 <code>
- ConvertOffice::ConvertOfficeConfig.options = {
-    :java_bin => "java",          # java binary
-    :nailgun =>false,             # for nailgun support
-    :soffice_port=>8100           # Open office port no
- }
+    ConvertOffice::ConvertOfficeConfig.options = {
+      :java_bin => "java",          # java binary
+      :nailgun =>false,             # for nailgun support
+      :soffice_port=>8100           # Open office port no
+  }
 </code>
 
 Example
