@@ -52,6 +52,7 @@ Valid Format
 ============
 
 To see valid format for conversion.
+
 <code>
   ConvertOffice::ConvertOfficeFormat.display_valid_format(input file name/format)
 </code>
