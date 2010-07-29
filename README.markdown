@@ -54,7 +54,7 @@ Valid Format
 To see valid format for conversion.
 
 <code>
-  ConvertOffice::ConvertOfficeFormat.display_valid_format(input file name/format)
+  ConvertOffice::ConvertOfficeFormat.display_valid_format(input file name/format optional field)
 </code>
 
 Advance Configuraion
