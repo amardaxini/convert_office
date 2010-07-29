@@ -47,13 +47,14 @@ If format is known then
   ConvertOffice::ConvertOfficeFormat.new.convert(src_file,"",format)
 </code>
 
+
 Valid Format
 ============
 
 To see valid format for conversion.
-  <code>
-     ConvertOffice::ConvertOfficeFormat.valid_format(input file name/format)
-  </code>
+<code>
+  ConvertOffice::ConvertOfficeFormat.display_valid_format(input file name/format)
+</code>
 
 Advance Configuraion
 ====================
