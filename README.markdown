@@ -38,18 +38,15 @@ These are the default settings which can be overwritten in your enviroment confi
 Example
 =======
 If destination file is known.destination file consist valid file format
+
 <code>
-
   ConvertOffice::ConvertOfficeFormat.new.convert(src_file,dest_file)
-
 </code>
 
 If format is known then
-  
+ 
 <code>
-
   ConvertOffice::ConvertOfficeFormat.new.convert(src_file,"",format)
-
 </code>
 
 Advance Configuraion
@@ -69,6 +66,7 @@ Start nailgun server.Before starting nailgun server make sure that your **classp
 <code>
  script/nailgun start
 </code>
+
 you have to overwrite Configuration make **nailgun option to true**
 Now after making nailgun option true run
 
