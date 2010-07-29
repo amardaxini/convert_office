@@ -26,13 +26,11 @@ Configuration
 These are the default settings which can be overwritten in your enviroment configuration file:
 
 <code>
-
     ConvertOffice::ConvertOfficeConfig.options = {
       :java_bin => "java",          # java binary
       :nailgun =>false,             # for nailgun support
       :soffice_port=>8100           # Open office port no
     }
-    
 </code>
 
 Example
@@ -48,6 +46,14 @@ If format is known then
 <code>
   ConvertOffice::ConvertOfficeFormat.new.convert(src_file,"",format)
 </code>
+
+Valid Format
+============
+
+To see valid format for conversion.
+  <code>
+     ConvertOffice::ConvertOfficeFormat.valid_format(input file name/format)
+  </code>
 
 Advance Configuraion
 ====================

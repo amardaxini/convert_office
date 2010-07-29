@@ -4,8 +4,8 @@ module ConvertOffice
 		JAR_PATH= File.expand_path(File.join(File.dirname(__FILE__),"java","jar","convert_office.jar"))
 		TEXT_FORMAT = %w(pdf odt sxw rtf  doc txt html wiki)
 		XL_FORMAT = %w(pdf ods sxc xls csv tsv html)
-		PPT_FORMAT = %w(pdf swf odp sxi ppt html)
-		DRAWING_FORMAT = %w(svg swf)
+		PT_FORMAT = %w(pdf swf odp sxi ppt html)
+		ODG_FORMAT = %w(svg swf)
 		VALID_FORMAT=	{
 						"odt"=>TEXT_FORMAT,
 						"sxw"=>TEXT_FORMAT,
@@ -20,10 +20,10 @@ module ConvertOffice
 						"xls"=>XL_FORMAT,
 						"csv"=>XL_FORMAT,
 						"tsv"=>XL_FORMAT,
-						"odp"=>PPT_FORMAT,
-						"sxi"=>PPT_FORMAT,
-						"ppt"=>PPT_FORMAT,
-						"odg"=>DRAWING_FORMAT
+						"odp"=>PT_FORMAT,
+						"sxi"=>PT_FORMAT,
+						"ppt"=>PT_FORMAT,
+						"odg"=>ODG_FORMAT
 		}
 		def convert(input_file,output_file="",format="")
 			java_bin = ConvertOffice::ConvertOfficeConfig.options[:java_bin]
@@ -52,9 +52,23 @@ module ConvertOffice
 					system(command)
 				end
 			end
-
 		end
 
+		def self.display_valid_format(file_name="")
+			if !file_name.blank?
+				input_extension_name = file_name.split(".").last
+				if VALID_FORMAT[input_extension_name].nil?
+					puts "Not A Proper Format"
+					VALID_FORMAT.each do |k,v|
+						puts "#{k} = #{v.join(",")}"
+					end
+				else
+					puts VALID_FORMAT[input_extension_name].join(",")
+				end
+			else
+				puts VALID_FORMAT
+			end
+		end  
 		def check_valid_conversion?(input_ext,format)
 			if VALID_FORMAT[input_ext].nil?
 				puts "Please provide proper input file"
