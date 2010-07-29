@@ -30,7 +30,7 @@ These are the default settings which can be overwritten in your enviroment confi
       :java_bin => "java",          # java binary
       :nailgun =>false,             # for nailgun support
       :soffice_port=>8100           # Open office port no
-  }
+    }
 </code>
 Example
 =======
