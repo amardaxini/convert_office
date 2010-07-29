@@ -45,9 +45,9 @@ module ConvertOffice
 				output_format = File.extname(output_file).split(".").last
 				if check_valid_conversion?(input_extension_name,output_format)
 					if nailgun
-						command = "time #{Nailgun::NgCommand::NGPATH} con -p #{port_no} -p #{port_no} #{input_file} #{output_file}"
+						command = "#{Nailgun::NgCommand::NGPATH} con -p #{port_no} #{input_file} #{output_file}"
 					else
-						command = "time #{java_bin} -Xmx512m -Djava.awt.headless=true -cp #{JAR_PATH} com.artofsolving.jodconverter.cli.ConvertDocument -p #{port_no} #{input_file} #{output_file}"
+						command = "#{java_bin} -Xmx512m -Djava.awt.headless=true -cp #{JAR_PATH} com.artofsolving.jodconverter.cli.ConvertDocument -p #{port_no} #{input_file} #{output_file}"
 					end
 					system(command)
 				end
