@@ -33,34 +33,39 @@ module ConvertOffice
 			if format.blank? && output_file.blank?
 				raise ArgumentError=>"Please provide format or output file"
 			elsif output_file.blank?
-				check_valid_conversion(input_extension_name,format)
-				if nailgun
-          command = "#{Nailgun::NgCommand::NGPATH} con -p #{port_no} -f #{format} #{input_file}"
-				else
-					command = "#{java_bin} -Xmx512m -Djava.awt.headless=true -cp #{JAR_PATH} com.artofsolving.jodconverter.cli.ConvertDocument -p #{port_no} -f #{format} #{input_file}"
-				end	
+				if check_valid_conversion?(input_extension_name,format)
+					if nailgun
+						command = "#{Nailgun::NgCommand::NGPATH} con -p #{port_no} -f #{format} #{input_file}"
+					else
+						command = "#{java_bin} -Xmx512m -Djava.awt.headless=true -cp #{JAR_PATH} com.artofsolving.jodconverter.cli.ConvertDocument -p #{port_no} -f #{format} #{input_file}"
+					end
+					system(command)
+				end
 			elsif format.blank?
 				output_format = File.extname(output_file).split(".").last
-				check_valid_conversion(input_extension_name,output_format)
-				if nailgun
-					command = "time #{Nailgun::NgCommand::NGPATH} con -p #{port_no} -p #{port_no} #{input_file} #{output_file}"
-				else
-					command = "time #{java_bin} -Xmx512m -Djava.awt.headless=true -cp #{JAR_PATH} com.artofsolving.jodconverter.cli.ConvertDocument -p #{port_no} #{input_file} #{output_file}"
+				if check_valid_conversion?(input_extension_name,output_format)
+					if nailgun
+						command = "time #{Nailgun::NgCommand::NGPATH} con -p #{port_no} -p #{port_no} #{input_file} #{output_file}"
+					else
+						command = "time #{java_bin} -Xmx512m -Djava.awt.headless=true -cp #{JAR_PATH} com.artofsolving.jodconverter.cli.ConvertDocument -p #{port_no} #{input_file} #{output_file}"
+					end
+					system(command)
 				end
 			end
-			puts command
-			system(command)
+
 		end
 
-		def check_valid_conversion(input_ext,format)
+		def check_valid_conversion?(input_ext,format)
 			if VALID_FORMAT[input_ext].nil?
 				puts "Please provide proper input file"
 				puts "Input file type #{VALID_FORMAT.keys.join(",")}"
-				exit(1)
+				return false
 			elsif	!VALID_FORMAT[input_ext].include?(format)
 				puts "Please provide proper output format/output file"
 				puts "Format/Output file must be #{VALID_FORMAT[input_ext].join(",")}"
-				exit(1)
+				return false
+			else
+				return true
 			end
 		end
 	end
