@@ -66,7 +66,9 @@ module ConvertOffice
 					puts VALID_FORMAT[input_extension_name].join(",")
 				end
 			else
-				puts VALID_FORMAT
+				VALID_FORMAT.each do |k,v|
+						puts "#{k} = #{v.join(",")}"
+				end
 			end
 		end  
 		def check_valid_conversion?(input_ext,format)

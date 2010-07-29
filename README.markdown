@@ -25,7 +25,6 @@ Configuration
 -------------
 
 These are the default settings which can be overwritten in your enviroment configuration file.
-
 <code>
     ConvertOffice::ConvertOfficeConfig.options = {
       :java_bin => "java",          # java binary
