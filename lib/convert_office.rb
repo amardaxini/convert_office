@@ -2,9 +2,9 @@ require 'convert_office_config'
 module ConvertOffice
 	class ConvertOfficeFormat
 		JAR_PATH= File.expand_path(File.join(File.dirname(__FILE__),"java","jar","convert_office.jar"))
-		TEXT_FORMAT = %w(pdf odt sxw rtf  doc txt html wiki)
-		XL_FORMAT = %w(pdf ods sxc xls csv tsv html)
-		PT_FORMAT = %w(pdf swf odp sxi ppt html)
+		TEXT_FORMAT = %w(pdf odt sxw rtf  doc txt html wiki docx)
+		XL_FORMAT = %w(pdf ods sxc xls csv tsv html xlx)
+		PT_FORMAT = %w(pdf swf odp sxi ppt html pptx)
 		ODG_FORMAT = %w(svg swf)
 		VALID_FORMAT=	{
 						"odt"=>TEXT_FORMAT,
