@@ -23,6 +23,7 @@ module ConvertOffice
 						"odp"=>PT_FORMAT,
 						"sxi"=>PT_FORMAT,
 						"ppt"=>PT_FORMAT,
+						"pptx"=>PT_FORMAT,
 						"odg"=>ODG_FORMAT
 		}
 		def convert(input_file,output_file="",format="")
