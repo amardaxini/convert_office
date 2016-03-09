@@ -1,8 +1,8 @@
 ConvertOffice
 =============
 
-It is a ruby Wrapper of [jodconverter][1] Which is used to convert office format to another office format/html 
-[1]: http://www.artofsolving.com/opensource/jodconverter.
+It is a ruby Wrapper of [jodconverter][2] Which is used to convert office format to another office format/html 
+[2]: http://www.artofsolving.com/opensource/jodconverter
 
 Install
 -------
